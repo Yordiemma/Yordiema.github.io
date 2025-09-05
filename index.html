@@ -2,307 +2,97 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Your Name – Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Portfolio of Your Name: projects, work, studies, hobbies, goals, and skills."
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yordanos Portfolio (HTML + CSS only)</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Font: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons: Font Awesome (CSS only) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
     />
   </head>
   <body>
-    <!-- ===== Header / Navigation ===== -->
-    <header>
-      <div>
-        <a href="#home" aria-label="Go to home"><strong>Your Name</strong></a>
+    <!-- CSS-only hamburger: the label toggles the hidden checkbox -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo"><span>Yordanos A.</span></div>
+
+        <div class="links">
+          <div class="link"><a href="#">Home</a></div>
+          <div class="link"><a href="#">About</a></div>
+          <div class="link"><a href="#">Skills</a></div>
+          <div class="link"><a href="#">Services</a></div>
+          <div class="link"><a href="#">Blogs</a></div>
+
+        </div>
+
+        <!-- Hidden checkbox + label as button -->
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburg" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </label>
       </div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#study">Where I Study</a></li>
-          <li><a href="#hobbies">Hobbies</a></li>
-          <li><a href="#goals">My Goals</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <main id="home">
-      <!-- ===== Hero / Intro (optional) ===== -->
-      <section aria-labelledby="intro-title">
-        <h1 id="intro-title">Hi, I’m Your Name</h1>
-        <p>Frontend developer. I build simple and useful web apps.</p>
-        <!-- Web app primary link -->
-        <p>
-          <a
-            href="https://your-live-app.example.com"
-            target="_blank"
-            rel="noopener"
-            aria-label="Open my main web app"
+      <!-- Dropdown controlled purely by :checked
+      <div class="dropdown">
+        <div class="links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Skills</a>
+          <a href="#">Services</a>
+          <a href="#">Blogs</a>
+          <a href="#">Contact Us</a> -->
+          <!-- Add a close label that unchecks the checkbox -->
+          <!-- <label
+            for="menu-toggle"
+            style="color: #fff; padding: 12px 0; cursor: pointer"
           >
-            🔗 Visit my main web app
-          </a>
-        </p>
-        <!-- Optional headshot -->
-        <!-- Replace src with your headshot -->
-        <figure>
-          <img
-            src="images/your-photo.jpg"
-            alt="Photo of Your Name"
-            width="280"
-          />
-          <figcaption>Your Name</figcaption>
-        </figure>
-      </section>
-
-      <!-- ===== Projects ===== -->
-      <section id="projects" aria-labelledby="projects-title">
-        <h2 id="projects-title">Projects</h2>
-
-        <!-- Project 1 -->
-        <article>
-          <header>
-            <h3>Project Title One</h3>
-          </header>
-          <p>Short description of what this project does and why it’s cool.</p>
-          <p>
-            <a
-              href="https://live-project-1.example.com"
-              target="_blank"
-              rel="noopener"
-              >Live demo</a
-            >
-            ·
-            <a
-              href="https://github.com/yourname/project-1"
-              target="_blank"
-              rel="noopener"
-              >Code</a
-            >
-          </p>
-          <figure>
-            <!-- Replace with your screenshot image -->
-            <img
-              src="images/project-1.png"
-              alt="Screenshot of Project Title One"
-            />
-            <figcaption>Project One – homepage screenshot</figcaption>
-          </figure>
-        </article>
-
-        <!-- Project 2 -->
-        <article>
-          <header>
-            <h3>Project Title Two</h3>
-          </header>
-          <p>Short description of the second project.</p>
-          <p>
-            <a
-              href="https://live-project-2.example.com"
-              target="_blank"
-              rel="noopener"
-              >Live demo</a
-            >
-            ·
-            <a
-              href="https://github.com/yourname/project-2"
-              target="_blank"
-              rel="noopener"
-              >Code</a
-            >
-          </p>
-          <figure>
-            <img
-              src="images/project-2.png"
-              alt="Screenshot of Project Title Two"
-            />
-            <figcaption>Project Two – feature view</figcaption>
-          </figure>
-        </article>
-
-        <!-- Add more <article> blocks for more projects -->
-      </section>
-
-      <!-- ===== Work (links + screenshots) ===== -->
-      <section id="work" aria-labelledby="work-title">
-        <h2 id="work-title">Work</h2>
-
-        <!-- Work item 1 -->
-        <article>
-          <header>
-            <h3>Company / Client Name</h3>
-          </header>
-          <p>Role: Junior Frontend Developer (Dates)</p>
-          <p>
-            <a
-              href="https://company-site.example.com"
-              target="_blank"
-              rel="noopener"
-              >Company website</a
-            >
-          </p>
-          <figure>
-            <img
-              src="images/work-1.png"
-              alt="Screenshot of the work/project delivered for Company Name"
-            />
-            <figcaption>Delivered feature/screenshot</figcaption>
-          </figure>
-        </article>
-
-        <!-- Work item 2 -->
-        <article>
-          <header>
-            <h3>Freelance / Personal Client</h3>
-          </header>
-          <p>Role: Web Designer & Developer (Dates)</p>
-          <p>
-            <a
-              href="https://client-site.example.com"
-              target="_blank"
-              rel="noopener"
-              >Client website</a
-            >
-          </p>
-          <figure>
-            <img
-              src="images/work-2.png"
-              alt="Screenshot of freelance project"
-            />
-            <figcaption>Landing page redesign</figcaption>
-          </figure>
-        </article>
-      </section>
-
-      <!-- ===== Where I Study ===== -->
-      <section id="study" aria-labelledby="study-title">
-        <h2 id="study-title">Where I Study</h2>
-        <ul>
-          <li>
-            <strong>School / Program Name</strong> — Frontend Development (<time
-              datetime="2025-08"
-              >Aug 2025</time
-            >
-            – <time datetime="2026-06">Jun 2026</time>) —
-            <a href="https://school.example.com" target="_blank" rel="noopener"
-              >School site</a
-            >
-          </li>
-          <li>
-            Online Courses — HTML, CSS, JavaScript —
-            <a
-              href="https://platform.example.com"
-              target="_blank"
-              rel="noopener"
-              >Course platform</a
-            >
-          </li>
-        </ul>
-      </section>
-
-      <!-- ===== Hobbies ===== -->
-      <section id="hobbies" aria-labelledby="hobbies-title">
-        <h2 id="hobbies-title">Hobbies</h2>
-        <ul>
-          <li>Coding mini-apps</li>
-          <li>Reading design blogs</li>
-          <li>Photography</li>
-          <li>Running</li>
-        </ul>
-        <!-- Optional hobby image -->
-        <figure>
-          <img
-            src="images/hobby-photo.jpg"
-            alt="Photo representing one of my hobbies"
-          />
-          <figcaption>What I do for fun</figcaption>
-        </figure>
-      </section>
-
-      <!-- ===== Goals ===== -->
-      <section id="goals" aria-labelledby="goals-title">
-        <h2 id="goals-title">My Goals</h2>
-        <ol>
-          <li>Build and ship 3 polished portfolio projects.</li>
-          <li>Learn React and TypeScript basics.</li>
-          <li>Contribute to an open-source repository.</li>
-          <li>Find an internship/entry role in frontend.</li>
-        </ol>
-      </section>
-
-      <!-- ===== Skills ===== -->
-      <section id="skills" aria-labelledby="skills-title">
-        <h2 id="skills-title">Skills</h2>
-        <div>
-          <h3>Frontend</h3>
-          <ul>
-            <li>HTML5 & semantic markup</li>
-            <li>CSS (Flexbox, Grid)</li>
-            <li>JavaScript (ES6+)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Tools</h3>
-          <ul>
-            <li>Git & GitHub</li>
-            <li>VS Code</li>
-            <li>Figma (basic)</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Other</h3>
-          <ul>
-            <li>Responsive design</li>
-            <li>Accessibility basics</li>
-            <li>REST APIs (fetch)</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ===== Contact ===== -->
-      <section id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact</h2>
-        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-        <p>
-          <a href="https://github.com/yourname" target="_blank" rel="noopener"
-            >GitHub</a
-          >
-          ·
-          <a
-            href="https://www.linkedin.com/in/yourname"
-            target="_blank"
-            rel="noopener"
-            >LinkedIn</a
-          >
-        </p>
-        <!-- Optional simple form (no styling) -->
-        <form action="#" method="post">
-          <label>
-            Your name
-            <input type="text" name="name" required />
+            <i class="fa-solid fa-xmark"></i>
           </label>
-          <label>
-            Your email
-            <input type="email" name="email" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button type="submit">Send</button>
-        </form>
-      </section>
-    </main>
+        </div>
+      </div>
+    </nav> -->
 
-    <!-- ===== Footer ===== -->
-    <footer>
-      <p>© <span id="year"></span> Your Name</p>
-    </footer>
+    <section>
+      <div class="main-container">
+        <div class="image">
+          <img src="./picture-modified copy.png" alt="Portrait / hero image" />
+        </div>
 
-    <script>
-      // Tiny enhancement: current year
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+        <div class="content">
+          <h1>Hey I'm <span>Yordanos A.</span></h1>
+          <div class="typewriter">I'm a <span></span></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+            perferendis quas consectetur possimus maxime consequatur cupiditate
+            eos dolorum molestias praesentium.
+          </p>
+
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="#" aria-label="X"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+          </div>
+
+          <div class="btn">
+            <button>Download CV</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -1,0 +1,323 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      html {
+        overflow-x: hidden;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: linear-gradient(
+          to right,
+          rgb(255, 255, 255),
+          rgb(254, 215, 173)
+        );
+      }
+
+      nav {
+        width: 100%;
+        position: sticky;
+        top: 0;
+      }
+      .nav-container {
+        height: 10vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .logo {
+        color: #000;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+      .logo span {
+        color: rgb(109, 67, 0);
+        text-shadow: 0 0 10px rgb(109, 67, 0);
+      }
+
+      .links {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+      }
+      .links a {
+        position: relative;
+        font-size: 1.1rem;
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .links a::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: rgb(109, 67, 0);
+        transition: width 0.2s linear;
+      }
+      .links a:hover {
+        color: rgb(109, 67, 0);
+      }
+      .links a:hover::before {
+        width: 100%;
+      }
+
+      .contact-btn {
+        padding: 5px 20px;
+        border-radius: 20px;
+        border: 2px solid rgb(109, 67, 0);
+        transition: 0.2s linear;
+      }
+      .contact-btn a {
+        color: #fff;
+      }
+      .contact-btn:hover {
+        background: rgb(109, 67, 0);
+      }
+      .contact-btn:hover a {
+        color: #fff;
+      }
+
+      /* Hamburger (CSS only) */
+      #menu-toggle {
+        display: none;
+      }
+      .hamburg {
+        display: none;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #000;
+      }
+
+      /* Dropdown driven by :checked */
+      .dropdown {
+        z-index: 100;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translateY(-500px);
+        backdrop-filter: brightness(40%) blur(3px);
+        box-shadow: 0 0 20px #000;
+        transition: transform 0.2s linear;
+      }
+      .dropdown .links {
+        flex-direction: column;
+        padding: 10px 0;
+      }
+      .dropdown .links a {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 12px 0;
+        text-decoration: none;
+        transition: 0.2s linear;
+      }
+      .dropdown .links a:hover {
+        background: rgb(109, 67, 0);
+      }
+
+      /* Toggle: when checkbox is checked, show dropdown */
+      #menu-toggle:checked ~ .dropdown {
+        transform: translateY(0);
+      }
+
+      section {
+        width: 100%;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
+      .main-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+      }
+      .image {
+        z-index: -1;
+        width: 50%;
+      }
+      .image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .content {
+        color: #000;
+        width: 40%;
+        min-height: 100px;
+      }
+      .content h1 {
+        font-size: clamp(1.4rem, 2rem + 3vw, 3rem);
+      }
+      .content h1 span {
+        color: rgb(109, 67, 0);
+        text-shadow: 0 0 10px rgb(109, 67, 0);
+      }
+
+      .typewriter {
+        font-weight: 600;
+        font-size: clamp(1rem, 1rem + 2vw, 2rem);
+        margin-top: 0.25rem;
+      }
+      .typewriter span {
+        color: rgb(109, 67, 0);
+        font-size: 2rem;
+        text-shadow: 0 0 5px rgb(109, 67, 0);
+        position: relative;
+      }
+      .typewriter span::before {
+        content: "Developer";
+        animation: words 15s infinite;
+      }
+      .typewriter span::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-left: 3px solid #000;
+        animation: cursor 0.6s linear infinite;
+      }
+      @keyframes cursor {
+        to {
+          border-left: 3px solid #b74b4b;
+        }
+      }
+      @keyframes words {
+        0%,
+        33% {
+          content: "Student";
+        }
+        34%,
+        66% {
+          content: "Front-End";
+        }
+        67%,
+        100% {
+          content: "Developer";
+        }
+      }
+
+      .content p {
+        font-size: clamp(0.9rem, 0.4rem + 1vw, 1rem);
+        margin: 10px 0 0;
+      }
+      .social-links {
+        margin-top: 10px;
+      }
+      .social-links i {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        background: transparent;
+        border: 0.2rem solid rgb(109, 67, 0);
+        border-radius: 50%;
+        color: rgb(109, 67, 0);
+        margin: 5px 10px;
+        font-size: 1.3rem;
+        transition: transform 0.2s linear, background 0.2s, color 0.2s;
+      }
+      .social-links i:hover {
+        transform: scale(1.1);
+        color: #fff;
+        background: rgb(109, 67, 0);
+        filter: drop-shadow(0 0 10px rgb(109, 67, 0));
+      }
+
+      .content .btn {
+        margin-top: 20px;
+      }
+      .content button {
+        width: 220px;
+        height: 44px;
+        margin: 10px 0;
+        background: rgb(109, 67, 0);
+        color: #fff;
+        border: none;
+        font-weight: 700;
+        border-radius: 6px;
+        transition: transform 0.2s, color 0.2s, box-shadow 0.2s, background 0.2s;
+      }
+      .content button:hover {
+        transform: scale(1.03);
+        color: rgb(109, 67, 0);
+        border: 2px solid rgb(109, 67, 0);
+        background: transparent;
+        box-shadow: 0 0 30px rgb(109, 67, 0);
+      }
+
+      /* Simple CSS-only fade-in on load (not scroll triggered) */
+      .image,
+      .content {
+        opacity: 0;
+        animation: fadeUp 0.8s ease-out 0.1s forwards;
+      }
+      .content {
+        animation-delay: 0.2s;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 884px) {
+        body {
+          overflow-y: visible;
+        }
+        .nav-container .links {
+          display: none;
+        }
+        .hamburg {
+          display: block;
+        }
+        .logo {
+          position: absolute;
+          top: 16px;
+          left: 15px;
+          font-size: 1.5rem;
+        }
+        .main-container {
+          flex-direction: column;
+        }
+        .content {
+          width: 85%;
+        }
+        .image {
+          width: 85%;
+        }
+        .social-links i {
+          width: 2.5rem;
+          height: 2.5rem;
+          font-size: 1.1rem;
+        }
+        .dropdown .links {
+          gap: 0;
+        }
+      }
+    
